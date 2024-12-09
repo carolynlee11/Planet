@@ -1,0 +1,42 @@
+
+  .process-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .process-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .process-card h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #565787;
+    margin-bottom: 1rem;
+  }
+  
+  .process-links {
+    font-size: 1.1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .process-links a {
+    text-decoration: underline;
+    color: #565787;
+    font-weight: 300;
+  }
+  
+  .process-links a:hover {
+    color: #000040
+  }
+  

@@ -1,0 +1,646 @@
+@font-face {
+  font-family: 'PierSans';
+  src: url('Assets/PPPierSans-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: PierSans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('background_gradient.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  cursor: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app-container {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  z-index: -10;
+}
+
+
+.logo {
+  height: 40px; /* Adjust size as needed */
+}
+
+.navbar {
+  z-index: 100; /* Ensure it's below the cursor */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #565787;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #000040; 
+}
+
+h2 {
+  color: #cbcbe2
+}
+
+p {
+  color: #cbcbe2;
+  font-size: 1.5rem;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* landing page animation */
+.background-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  z-index: 0;
+}
+
+.rotating-circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  top: 45.5%;
+  left: 46%;
+}
+
+.circle {
+  transform: rotate(0deg) translateX(300px);
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) translateX(300px); }
+  100% { transform: rotate(360deg) translateX(300px); }
+}
+
+.main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #565787;
+  z-index: 3;
+}
+
+.main-content h1 {
+  font-weight: 300;
+  font-size: 8rem;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.main-content p {
+  font-size: 1.5rem;
+  color: #565787;
+  margin: 0;
+}
+
+/* Learn More Circle - animation https://www.sliderrevolution.com/resources/css-border-animation/*/
+.learn-more-circle {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #565787;
+  font-size: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 3;
+  transition: color 0.3s ease;
+}
+
+.learn-more-text {
+  position: relative;
+  z-index: 2;
+  color: #565787;
+  font-size: x-large;
+}
+
+.learn-more-circle::before,
+.learn-more-circle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+}
+
+.learn-more-circle:hover {
+  border-color: #ffffff;
+}
+
+.learn-more-circle:hover::before {
+  border-top-color: #565787;
+  border-right-color: #565787;
+  border-bottom-color: #565787;
+  transition:
+    border-top-color 0.10s linear, /* Stagger the border appearance */
+    border-right-color 0.10s linear 0.1s,
+    border-bottom-color 0.10s linear 0.2s;
+}
+
+.learn-more-circle:hover::after {
+  border-top: 2px solid #565787;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  transform: rotate(270deg); /* Full rotation */
+  transition:
+    transform 0.4s linear 0s,
+    border-left-width 0s linear 0.3s; /* Final adjustment after rotation */
+}
+
+#About {
+  background-color: #565787;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 3rem;
+  height: 50vh;
+  box-sizing: border-box;
+}
+
+#About p {
+  color: #cbcbe2;
+  font-size: 1.2rem;
+  max-width: 50%;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#ConceptVideo {
+  background-color: #565787;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem; /* Adjust padding to reduce gap */
+  height: auto; /* Allow content to determine height */
+  box-sizing: border-box;
+}
+
+/* Demo Section */
+#Demo {
+  background-color: #565787; /* Match other sections' background */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem 1rem; /* Match padding to Concept Video */
+  height: 100vh; /* Allow content to determine height */
+  box-sizing: border-box;
+}
+
+.qr-container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code {
+  width: 150px; /* Adjust size */
+  height: 150px;
+  margin-top: 1rem;
+}
+
+.qr-text {
+  color: #cbcbe2;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+
+#Process {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 3rem;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#Process h2 {
+  color: #565787;
+}
+#Process p {
+  color: #565787;
+  font-size: 1.2rem;
+  max-width: 50%;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#OurTeam {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 3rem;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#OurTeam h2 {
+  color: #565787;
+}
+
+#OurTeam p {
+  color: #565787;
+  font-size: 1.2rem;
+  max-width: 50%;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+  .custom-cursor {
+    display: none; /* Hide custom cursor on mobile */
+  }
+  
+  body {
+    cursor: default; /* Restore the default cursor */
+    background-image: url('background_gradient.svg');
+
+  }
+  
+  .main-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #565787;
+    z-index: 3;
+  }
+  
+  .main-content h1 {
+    font-weight: 300;
+    font-size: 4rem;
+    margin: 0;
+    padding-left: 1rem;
+  }
+  
+  .main-content p {
+    font-size: 1.3rem;
+    color: #565787;
+    margin: 0;
+  }
+
+  .background-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg) translateX(125px);
+    width: 20px;
+    height: 20px;
+    background-color: #565787;
+    border-radius: 50%;
+    animation: rotateFooter 8s linear infinite;
+    z-index: 34;
+
+  }
+
+  .rotating-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    top: 45%;
+    left: 46%;
+  }
+  
+  .circle {
+    transform: rotate(0deg) translateX(175px);
+    animation: rotate 8s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg) translateX(175px); }
+    100% { transform: rotate(360deg) translateX(175px); }
+  }
+
+  .learn-more-circle {
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #565787;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 3;
+    transition: color 0.3s ease;
+  }
+  
+  .learn-more-text {
+    position: relative;
+    z-index: 2;
+    color: #565787;
+    font-size: medium;
+  }
+  
+  .learn-more-circle::before,
+  .learn-more-circle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+  }
+  
+  .learn-more-circle:hover {
+    border-color: #ffffff;
+  }
+  
+  .learn-more-circle:hover::before {
+    border-top-color: #565787;
+    border-right-color: #565787;
+    border-bottom-color: #565787;
+    transition:
+      border-top-color 0.10s linear, /* Stagger the border appearance */
+      border-right-color 0.10s linear 0.1s,
+      border-bottom-color 0.10s linear 0.2s;
+  }
+  
+  .learn-more-circle:hover::after {
+    border-top: 2px solid #565787;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    transform: rotate(270deg); /* Full rotation */
+    transition:
+      transform 0.4s linear 0s,
+      border-left-width 0s linear 0.3s; /* Final adjustment after rotation */
+  }
+
+    /* About Section */
+    #About {
+      background-color: #565787;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem 1rem; /* Smaller padding for mobile */
+      height: auto; /* Adjust height to fit content */
+      box-sizing: border-box;
+    }
+  
+    #About p {
+      color: #cbcbe2;
+      font-size: 1rem; /* Smaller font size */
+      max-width: 90%; /* Narrower content for readability */
+      margin: 1rem auto; /* Vertical spacing */
+      line-height: 1.3; /* Tighter line spacing */
+    }
+  
+    /* Concept Video Section */
+    #ConceptVideo {
+      background-color: #565787;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem 1rem;
+      height: auto;
+      box-sizing: border-box;
+    }
+  
+    #ConceptVideo iframe {
+      max-width: 90%; /* Make video responsive */
+      height: 5; /* Maintain aspect ratio */
+    }
+  
+    /* Process Section */
+    #Process {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2rem 1rem;
+      height: auto;
+      box-sizing: border-box;
+    }
+  
+    #Process p {
+      color: #565787;
+      font-size: 1rem; /* Smaller font size */
+      max-width: 90%; /* Narrower content */
+      margin: 1rem auto; /* Vertical spacing */
+      line-height: 1.4; /* Tighter line spacing */
+    }
+  
+    /* Our Team Section */
+    #OurTeam {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2rem 1rem;
+      height: auto;
+      box-sizing: border-box;
+    }
+  
+    #OurTeam p {
+      color: #565787;
+      font-size: 1rem; /* Smaller font size */
+      max-width: 90%; /* Narrower content */
+      margin: 1rem auto; /* Vertical spacing */
+      line-height: 1.4; /* Tighter line spacing */
+    }
+  
+}
+
+/* Footer Section */
+/* Footer Section */
+#Footer {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 90%;
+  position: relative;
+}
+
+.semi-circle {
+  position: relative;
+  width: 350px;
+  height: 175px; /* Half the height of a full circle */
+  border-top-left-radius: 175px; /* Top-left rounded for a semicircle */
+  border-top-right-radius: 175px; /* Top-right rounded for a semicircle */
+  border: 2px solid #565787;
+  overflow: visible;
+  z-index: 0;
+}
+
+.footer-rotating-circle {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #565787;
+  border-radius: 50%;
+  animation: rotateFooter 8s linear infinite;
+  z-index: 1; /* Ensure it appears above the semi-circle */
+}
+
+@keyframes rotateFooter {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-125px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateY(-125px);
+  }
+}
+
+.footer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #565787;
+  z-index: 2; /* Ensure text stays above the circle */
+}
+
+.footer-text h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.footer-text p {
+  font-size: 1rem;
+  margin: 0;
+  color: #565787;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem; /* Space between the links and the circle */
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Two columns */
+  gap: 1rem; /* Space between rows and columns */
+}
+
+.footer-links li a {
+  color: #565787;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #000040;
+}
+

@@ -1,0 +1,125 @@
+
+  #loader {
+    width: 100px;
+    height: 100px;
+  
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+  }
+  
+  .planet-top {
+    width: 70%;
+    height: 70%;
+    position: relative;
+    top: 15%;
+    left: 15%;
+    z-index: 20;
+    border-radius: 50%;
+    background: linear-gradient(-15deg, #6BBAEC 0, #6987C9 50%, transparent 51%);
+    animation: blinktop 0.6s linear infinite;
+  }
+  
+  .planet-bottom {
+    height: 70%;
+    width: 70%;
+    z-index: 80;
+    position: absolute;
+    background: linear-gradient(-15deg, transparent 49%, #6987C9 50%, #7880B5 100%);
+    top: 15%;
+    left: 15%;
+    border-radius: 50%;
+    animation: blinkbot 0.6s linear infinite;
+  }
+  
+  .ring {
+    width: calc(100% - 6px);
+    height: calc(100% / 3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-10deg);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    z-index: 50;
+  }
+  
+  .ring:after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: calc(10% * 1.5);
+    height: calc(33% * 1.5);
+    border-radius: 50%;
+    background: linear-gradient(45deg, #bec7da, #fff); /* Darker blue gradient */
+    animation: flyaround 1.8s linear infinite;
+  }
+  
+  @keyframes blinktop {
+    0%,
+    100% {
+      background: linear-gradient(-15deg, #d97dcd 0, #b06fc4 50%, transparent 51%);
+    }
+    33% {
+      background: linear-gradient(-15deg, #b06fc4 0, #9d5eb1 50%, transparent 51%);
+    }
+    66% {
+      background: linear-gradient(-15deg, #9d5eb1 0, #d97dcd 50%, transparent 51%);
+    }
+  }
+  
+  @keyframes blinkbot {
+    0%,
+    100% {
+      background: linear-gradient(-15deg, transparent 49%, #b06fc4 50%, #9d5eb1 100%);
+    }
+    33% {
+      background: linear-gradient(-15deg, transparent 49%, #9d5eb1 50%, #d97dcd 100%);
+    }
+    66% {
+      background: linear-gradient(-15deg, transparent 49%, #d97dcd 50%, #b06fc4 100%);
+    }
+  }
+  
+  
+  @keyframes flyaround {
+    0%,
+    100% {
+      top: 10%;
+      left: -10%;
+    }
+    8% {
+      top: 50%;
+      left: 0;
+    }
+    20% {
+      top: 85%;
+    }
+    25% {
+      top: 80%;
+    }
+    30% {
+      top: 75%;
+    }
+    40% {
+      top: 45%;
+      left: 90%;
+    }
+    50% {
+      left: 95%;
+    }
+    60% {
+      left: 90%;
+      top: 0;
+    }
+    75% {
+      left: 50%;
+      top: -30%;
+    }
+    92% {
+      left: 0;
+      top: 0;
+    }
+  }
+  

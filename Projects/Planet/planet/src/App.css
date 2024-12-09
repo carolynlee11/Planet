@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Optional for a slight motion effect */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.fade-in-text {
+  opacity: 0;
+  animation: fadeText 1s ease-in-out forwards;
+}
+
+
+
+
+
+#Home {
+  position: relative;
+  height: 100vh; /* Ensure full-screen height for the landing page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden-header {
+  opacity: 0; /* Fully transparent initially */
+  visibility: visible; /* Not visible */
+  transition: opacity .5s ease-in-out forwards; /* Smooth fade-in */
+}
+
+.hidden-header.fade-in {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Visible */
+}
